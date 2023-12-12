@@ -1,0 +1,59 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Python: Current File",
+        "type": "python",
+        "request": "launch",
+        "program": "${file}",
+        "console": "integratedTerminal",
+        "justMyCode": true
+      },
+      {
+        "name": "Python: Firebase Cloud Function",
+        "type": "python",
+        "request": "launch",
+        "module": "functions_framework",
+        "cwd": "${workspaceFolder}",
+        "args": [
+          "--target=reply",
+          "--source=python/main.py",
+          "--debug"
+        ],
+        "console": "integratedTerminal"
+      },
+      {
+        "name": "Python: Flask",
+        "type": "python",
+        "request": "launch",
+        "module": "flask",
+        "env": {
+          "FLASK_APP": "python/app.py",
+          "FLASK_DEBUG": "1"
+        },
+        "args": [
+          "run",
+          "--no-debugger"
+        ],
+        "jinja": true,
+        "justMyCode": true
+      },
+      {
+        "name": "Docker: Python - Flask",
+        "type": "docker",
+        "request": "launch",
+        "preLaunchTask": "docker-run: debug",
+        "python": {
+          "pathMappings": [
+            {
+              "localRoot": "${workspaceFolder}",
+              "remoteRoot": "/app"
+            }
+          ],
+          "projectType": "flask"
+        },
+        "removeContainerAfterDebug": false
+      }
+    ]
+  }
+  
