@@ -52,7 +52,7 @@
           ],
           "projectType": "flask"
         },
-        "removeContainerAfterDebug": false
+        "removeContainerAfterDebug": true
       }
     ]
   }
